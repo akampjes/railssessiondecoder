@@ -1,0 +1,11 @@
+<h1>Decode some rails sessionz :)</h1>
+
+<% if @result %>
+    <div class="panel">
+      <h3>Session data:</h3>
+      <p><%= @result.inspect %></p>
+    </div>
+<% end %>
+
+<%= render 'form' %>
+

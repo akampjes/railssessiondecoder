@@ -1,0 +1,27 @@
+<%= form_for(@decoder, as: 'decoder') do |f| %>
+    <% if @decoder.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@decoder.errors.count, "error") %> prohibited this decoder from being saved:</h2>
+
+          <ul>
+            <% @decoder.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="row">
+      <%= f.label :cookie, 'Session' %>
+      <%= f.text_area :cookie, value: 'Q1o2QlVkcUI5VXF2TVI0cEFDbXBvdFI3K0R0OFZBZG91RWpnRi8rYWZOaTIvbUJmSVFmSm41ZXJ5czUzNDlMajl0a1l0MC9UcHdSTDF0Z3VSWllJVGY0S2duM2NwNy9CKyttVmErMmVpelhaQVNMZzlrcHpaR2x1dStZNWFKaC9CWVF3L3V1akRXMytSeEgwL1JOS0FzbWVNS05qMDkwanFXc2hIZFErNytnMExHTHJLK01MdUh3RmJOdU9HZFlVbzhjcmI5S3JZRWFkbmZUbzU2STlLc1NjMW4rYnhlQ3Y1VDFVT0wxU2ErQWxqZ0NNT1R3cUk1K3Fja0pYL09pMC0tdmtkb3hVUXFqUFFLbERrRzI4Ni9oQT09--0ba26fe2439256a59a0295c94b1efa6507ff457b', rows: '5' %>
+    </div>
+
+    <div class="row">
+      <%= f.label :secret_key, 'Secret key' %>
+      <%= f.text_field :secret_key, value: 'af08266ff8187566de18395a562b294fd0b5a0bebbd93b9f011af4191b1636f1d42e9ca5063aa78e46ad858e6571b5dfe69ce601fd6d82354d5e0a518773bf11' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Decode session!', class: 'button' %>
+    </div>
+<% end %>

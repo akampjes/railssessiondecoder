@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'visitors#index'
+  resources :decoders
+  #root to: 'visitors#index'
+  root to: 'decoders#index'
 end
